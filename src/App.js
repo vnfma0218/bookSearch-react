@@ -1,13 +1,15 @@
+import { Container } from '@mui/material';
 import { useState } from 'react';
 import './App.css';
+import BookList from './components/BookList';
 import SearchBook from './components/SearchBook';
 function App() {
   const [bookList, setBookList] = useState([]);
-  console.log(bookList);
   return (
-    <div>
+    <Container maxwidth='sm'>
       <SearchBook setBookList={(data) => setBookList(data)} />
-    </div>
+      <BookList bookList={bookList} />
+    </Container>
   );
 }
 
