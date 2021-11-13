@@ -1,0 +1,7 @@
+.book-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.book-item:hover {
+  transform: translateY(-10px);
+}

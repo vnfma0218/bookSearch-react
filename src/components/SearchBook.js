@@ -1,7 +1,7 @@
-import { Button, Input } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import './SearchBook.css';
 export default function SearchBook(props) {
   const [searchTerm, setSearchTerm] = useState('');
   const searchSubmitHandler = async (e) => {
@@ -26,12 +26,20 @@ export default function SearchBook(props) {
     <section className='search__container'>
       <h1>책검색하기</h1>
       <form onSubmit={searchSubmitHandler}>
-        <Input
+        {/* <Input
           id='standard-search'
           label='Search field'
           type='search'
           variant='standard'
           placeholder='Search your books'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        /> */}
+        <TextField
+          id='outlined-search'
+          className='search-input'
+          label='Search'
+          type='search'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
